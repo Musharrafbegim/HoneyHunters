@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+  main.content
+    h1.note-title Все Входящие
+
+    each value in noteList
+      div.note-wrapper
+        a.note(href=`/notes/${ value.id }`)= value.title
+        a.note(href=`/notes/${ value.id }`)= value.email
+        a.delete(href='#') Удалить

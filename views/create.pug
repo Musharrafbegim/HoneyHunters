@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+  main.content
+    h1.form-title Место для комментарии
+
+    if error
+      p.error Ошибка. Попробуйте еще раз!
+
+    if success
+      p.success Сообщение отправлено. 
+
+    form.form(method='POST' action='/create')
+      label Имя
+      input.input(type='text' name='title')
+
+      label E-mail
+      input.input(type='text' name='email')
+
+      label Комментарий
+      textarea.input(rows='10' cols='8' name='desc')
+
+      button.btn Записать
